@@ -10,15 +10,9 @@ app.use(express.json())
 app.use(cors())
 app.use("/v1", v1)
 app.use("/swegger",swegger)
-// beforeAll(async () => {
-//     await mongodb(); // ✅ Wait for DB connection before tests
-//   });
-  
 mongodb()
+
 app.use('/uploads', express.static(path.join(__dirname, './uploads')));
-
-
-
 
 app.listen(process.env.PORT, () => {
     console.log("start server", process.env.PORT);
