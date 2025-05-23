@@ -13,9 +13,9 @@ app.use(express.json())
 // app.use(cors())
 app.use("/v1",v1)
 mongodb()
-// app.use("/uploads", express.static("./uploads"));
+app.use("/uploads", express.static("./uploads"));
 
-
+// app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.listen(process.env.PORT,()=>{
     console.log("start server",process.env.PORT);
